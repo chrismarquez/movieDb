@@ -11,11 +11,11 @@
 
 class Series : public AbstractVideo {
 private:
-    vector<vector<AbstractVideo>> episodes;
+    vector<vector<IVideo>> episodes;
 public:
     explicit Series(string id, string name, int duration, string genre);
     double getScore() const override;
-    void addSeason(vector<IVideo> season);
+    void addSeason(const vector<IVideo>& season);
     void addEpisode(IVideo& episode);
 };
 

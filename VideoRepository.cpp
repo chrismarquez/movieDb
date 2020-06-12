@@ -6,8 +6,8 @@
 #include "NotFoundException.h"
 
 VideoRepository::VideoRepository() {
-    movies = vector<AbstractVideo>{};
-    series = vector<AbstractVideo>{};
+    movies = vector<IVideo>{};
+    series = vector<IVideo>{};
 }
 
 void VideoRepository::loadVideos(string file) {
@@ -19,11 +19,14 @@ IVideo& VideoRepository::getVideo(string id) const {
 }
 
 vector<IVideo> VideoRepository::getSeries() const {
-    return vector<IVideo>();
+    return series;
 }
 
 vector<IVideo> VideoRepository::getAllVideo() const {
-    return vector<IVideo>();
+    auto result = vector<IVideo>{};
+    result.insert(result.end(), movies.begin(), movies.end());
+    result.insert(result.end(), series.begin(), series.end());
+    return result;
 }
 
 vector<IVideo> VideoRepository::getMovies() const {

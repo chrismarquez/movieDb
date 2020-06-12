@@ -12,8 +12,8 @@
 
 class VideoRepository {
 private:
-    vector<AbstractVideo> movies;
-    vector<AbstractVideo> series;
+    vector<IVideo> movies;
+    vector<IVideo> series;
 public:
     explicit VideoRepository();
     void loadVideos(string file);
