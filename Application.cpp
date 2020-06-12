@@ -10,6 +10,7 @@ Application::Application() {
 
 }
 
+
 void Application::run() {
     int selection = -1;
     string userInput;
@@ -18,10 +19,17 @@ void Application::run() {
         cin >> userInput;
         try {
             selection = stoi(userInput);
+            string file;
             switch (selection) {
                 case 1:
+                    cout << "Introduzca el nombre de archivo" << endl;
+                    cin >> file;
+                    videoRepository.loadVideos(file);
+                    break;
+                case 2:
                     break;
                 default:
+                    cout << "La opción no es válida. Seleccione una opción del menú" << endl;
                     break;
             }
         } catch (exception& e) {

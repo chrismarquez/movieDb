@@ -6,9 +6,11 @@
 #define MOVIEDB_APPLICATION_H
 
 #include <iostream>
+#include "VideoRepository.h"
 
 class Application {
 private:
+    VideoRepository videoRepository;
     static void printMenu();
 public:
     explicit Application();

@@ -16,13 +16,13 @@ protected:
 public:
     explicit Video(string id, string name, int duration, string genre);
     string getId() const;
-    void setId(string&& id);
+    void setId(string& id);
     string getName() const;
-    void setName(string&& name);
+    void setName(string& name);
     string getDuration() const;
-    void setDuration(int&& minutes);
+    void setDuration(int& minutes);
     string getGenre() const;
-    void setGenre(string&& genre);
+    void setGenre(string& genre);
     virtual double getScore() const = 0;
 };
 

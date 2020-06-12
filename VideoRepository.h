@@ -15,13 +15,12 @@ private:
     vector<Video> series;
 public:
     explicit VideoRepository();
-    void addMovie(Video&& movie);
-    void addSeries(Video&& series);
+    void loadVideos(string& file);
     void getAllVideo() const;
-    void getSeries(string&& id) const;
-    void getSeriesByGenre(string&& genre) const;
+    void getSeries(string& id) const;
+    void getSeriesByGenre(string& genre) const;
     void getMovies() const;
-    void getMoviesByGenre(string&& genre) const ;
+    void getMoviesByGenre(string& genre) const ;
 };
 
 

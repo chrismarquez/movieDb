@@ -16,7 +16,7 @@ string Video::getId() const {
     return id;
 }
 
-void Video::setId(string&& id) {
+void Video::setId(string& id) {
     this->id = id;
 }
 
@@ -24,7 +24,7 @@ string Video::getName() const {
     return name;
 }
 
-void Video::setName(string&& name) {
+void Video::setName(string& name) {
     this->name = name;
 }
 
@@ -38,7 +38,7 @@ string Video::getDuration() const {
     return result;
 }
 
-void Video::setDuration(int&& minutes) {
+void Video::setDuration(int& minutes) {
     this->duration = minutes;
 }
 
@@ -46,7 +46,7 @@ string Video::getGenre() const {
     return genre;
 }
 
-void Video::setGenre(string&& genre) {
+void Video::setGenre(string& genre) {
     this->genre = genre;
 }
 
