@@ -6,21 +6,23 @@
 #define MOVIEDB_VIDEOREPOSITORY_H
 
 
-#include "Video.h"
+#include "AbstractVideo.h"
+#include "IVideo.h"
 #include <vector>
 
 class VideoRepository {
 private:
-    vector<Video> movies;
-    vector<Video> series;
+    vector<AbstractVideo> movies;
+    vector<AbstractVideo> series;
 public:
     explicit VideoRepository();
-    void loadVideos(string& file);
-    void getAllVideo() const;
-    void getSeries(string& id) const;
-    void getSeriesByGenre(string& genre) const;
-    void getMovies() const;
-    void getMoviesByGenre(string& genre) const ;
+    void loadVideos(string file);
+    vector<IVideo> getAllVideo() const;
+    IVideo& getVideo(string id) const;
+    vector<IVideo> getSeries() const;
+    vector<IVideo> getMovies() const;
+    vector<IVideo> getSeriesByGenre(string genre) const;
+    vector<IVideo> getMoviesByGenre(string genre) const;
 };
 
 

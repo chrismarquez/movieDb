@@ -3,11 +3,12 @@
 //
 
 #include "Application.h"
+#include "NotFoundException.h"
 
 using namespace std;
 
 Application::Application() {
-
+    videoRepository = VideoRepository{};
 }
 
 
@@ -32,7 +33,10 @@ void Application::run() {
                     cout << "La opción no es válida. Seleccione una opción del menú" << endl;
                     break;
             }
-        } catch (exception& e) {
+        } catch (NotFoundException e) {
+            cout << "El elemento no fue encontrado" << endl;
+            cout << e.what() << endl;
+        } catch (exception e) {
             cout << "El comando no es válido. Seleccione una opción del menú" << endl;
         }
     }

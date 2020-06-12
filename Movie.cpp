@@ -6,7 +6,7 @@
 #include <utility>
 
 Movie::Movie(string id, string name, int duration, string genre, double score)
-: Video(std::move(id), std::move(name), duration, std::move(genre)), score(score) {
+: AbstractVideo(std::move(id), std::move(name), duration, std::move(genre)), score(score) {
 
 }
 

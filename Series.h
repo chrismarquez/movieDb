@@ -7,14 +7,16 @@
 
 
 #include <vector>
-#include "Video.h"
+#include "AbstractVideo.h"
 
-class Series : public Video {
+class Series : public AbstractVideo {
 private:
-    vector<vector<Video>> episodes;
+    vector<vector<AbstractVideo>> episodes;
 public:
     explicit Series(string id, string name, int duration, string genre);
-    double getScore() const override ;
+    double getScore() const override;
+    void addSeason(vector<IVideo> season);
+    void addEpisode(IVideo& episode);
 };
 
 

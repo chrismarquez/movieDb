@@ -6,9 +6,9 @@
 #define MOVIEDB_MOVIE_H
 
 
-#include "Video.h"
+#include "AbstractVideo.h"
 
-class Movie : public Video {
+class Movie : public AbstractVideo {
 private:
     double score;
 public:
